@@ -9,8 +9,8 @@ public class Main {
         List<Users> list = new ArrayList<>();
         list.add(new Users ("Nata", "Kyiv", "Ukraine", 55));
         list.add(new Users ("Roman", "Lviv","Ukraine", 50));
-        list.add(new Users ("Mary", "NY","United States", 15));
-        list.add(new Users ("Petro", "Kyiv","Ukraine", 40));
+        list.add(new Users ("Mary", "NY", "United States", 15));
+        list.add(new Users ("Petro", "Kyiv", "Ukraine", 40));
 
         List<Users> filteredlist = new ArrayList<>();
         for (int i=0; i<list.size(); i++) {
