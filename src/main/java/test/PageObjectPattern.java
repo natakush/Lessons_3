@@ -1,19 +1,18 @@
 package test;
 
 import org.testng.annotations.Test;
-import page.LoginPage;
-import page.ProductPage;
+import page.*;
 
 public class PageObjectPattern {
     private final String url = "https://www.saucedemo.com/";
     private final LoginPage loginPage = new LoginPage();
     private final ProductPage productPage = new ProductPage();
-    private final String price1 = "$7.99";
-    private final String price2 = "$9.99";
-    private final String name = "N";
-    private final String surname = "K";
-    private final String zip = "22222";
-    private final String fin = "Thank you for your order!";
+    private final CartPage cartPage = new CartPage();
+    private final InfoPage infoPage = new InfoPage();
+    private final CheckoutPage checkoutPage = new CheckoutPage();
+    private final LastPage lastPage = new LastPage();
+    private final String price1 = "7.99";
+    private final String price2 = "9.99";
 
     @Test
     public void success() {
@@ -23,9 +22,9 @@ public class PageObjectPattern {
         loginPage.clickLoginButton();
         productPage.addToCart(price1);
         productPage.addToCart(price2);
-        productPage.checkCart(price1, price2);
-        productPage.fillForm(name, surname, zip);
-        productPage.getTaxes();
-        productPage.finish(fin);
+        cartPage.checkCart(price1, price2);
+        infoPage.fillForm("N", "K", "22222");
+        checkoutPage.getTaxes();
+        lastPage.finish("Thank you for your order!");
     }
 }
